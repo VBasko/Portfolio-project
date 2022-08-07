@@ -8,6 +8,12 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
-h1 {
-  background-color: red;
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 15px;
+  margin: 0 auto;
 }
