@@ -38,6 +38,12 @@ h1 {
   line-height: 1.4;
 }
 
+h2 {
+  font-size: 1.875em;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .container {
   max-width: 1140px;
   padding: 0 15px;
@@ -92,6 +98,7 @@ header .nav-link.active {
 
 #main {
   padding-top: 165px;
+  height: 724px;
 }
 
 #main .flex {
@@ -129,4 +136,22 @@ header .nav-link.active {
 .main-img {
   padding-top: 51px;
   width: 540px;
+}
+
+.section-header {
+  height: 170px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  padding-top: 28px;
+  border-bottom: 2px solid var(--color-primary);
+  width: 255px;
+}
+
+h3 {
+  font-size: 1.5625em;
+  line-height: 1.4;
+  margin-bottom: 65px;
 }
