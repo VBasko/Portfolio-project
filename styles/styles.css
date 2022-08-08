@@ -14,7 +14,7 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 1em;
+  font-size: 16px;
   color: var(--color-primary);
   font-weight: 500;
 }
@@ -30,17 +30,23 @@ ul {
 a {
   text-decoration: none;
   color: var(--color-primary);
+  transition: var(--transition);
+}
+
+a:hover,
+footer a:hover {
+  color: var(--color-acent);
 }
 
 h1 {
   font-weight: 800;
-  font-size: 2.1875em;
+  font-size: 2.1875rem;
   padding: 90px 0 36px;
   line-height: 1.4;
 }
 
 h2 {
-  font-size: 1.875em;
+  font-size: 1.875rem;
   font-weight: 800;
   line-height: 1.4;
 }
@@ -65,8 +71,8 @@ header {
 }
 
 #header.active {
-  height: 125px;
-  padding: 26px 0;
+  height: 95px;
+  padding: 11px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -223,4 +229,63 @@ h3 {
 
 .about-img {
   width: 614px;
+}
+
+.contact-content {
+  padding: 50px 0 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contact .contact-icons ul {
+  display: flex;
+  gap: 58px;
+  font-size: 27px;
+}
+
+#contact a:hover {
+  color: var(--color-acent);
+}
+
+.contact-content .email {
+  line-height: 1.4;
+  width: 445px;
+}
+
+footer .container {
+  padding: 100px 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-right {
+  width: 445px;
+  gap: 125px;
+}
+
+.footer-right .nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.footer-right .contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-right .contacts .email {
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.footer-right .contact-icons ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 20px;
 }
