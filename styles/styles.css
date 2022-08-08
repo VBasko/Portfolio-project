@@ -139,7 +139,7 @@ header .nav-link.active {
 }
 
 .section-header {
-  height: 170px;
+  height: 70px;
 }
 
 h2::after {
@@ -150,8 +150,49 @@ h2::after {
   width: 255px;
 }
 
+.work {
+  padding: 100px 0;
+}
+
 h3 {
   font-size: 1.5625em;
   line-height: 1.4;
   margin-bottom: 65px;
+}
+
+.work .flex {
+  align-items: center;
+  gap: 30px;
+}
+
+.work-text {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  line-height: 1.4;
+}
+
+.work-text h4 {
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.work-img {
+  width: 730px;
+}
+
+.work .icons {
+  display: flex;
+  gap: 18px;
+  font-size: 2em;
+}
+
+.green-bg {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.green-bg a {
+  color: var(--color-white);
 }
