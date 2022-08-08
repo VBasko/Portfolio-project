@@ -2,6 +2,7 @@
 
 :root {
   --color-primary: #073827;
+  --color-acent: #ff681c;
   --color-white: white;
   --transition: all 300ms ease;
 }
@@ -185,7 +186,15 @@ h3 {
 .work .icons {
   display: flex;
   gap: 18px;
+}
+
+.work a {
   font-size: 2em;
+  transition: var(--transition);
+}
+
+.work a:hover {
+  color: var(--color-acent);
 }
 
 .green-bg {
