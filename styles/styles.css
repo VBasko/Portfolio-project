@@ -73,7 +73,8 @@ header {
   transition: var(--transition);
 }
 
-#close-btn {
+#close-btn,
+#menu-btn {
   display: none;
 }
 
@@ -443,6 +444,16 @@ footer .container {
     padding: 0;
   }
 
+  #menu-btn {
+    display: block;
+    font-size: 1rem;
+  }
+
+  #main {
+    padding-top: 90px;
+    height: 400px;
+  }
+
   .logo {
     font-size: 1rem;
   }
@@ -453,6 +464,83 @@ footer .container {
 
   .main-img {
     display: none;
+  }
+
+  .work {
+    padding: 30px 0;
+  }
+
+  .work .flex.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .work .flex {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h2::after {
+    width: 200px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .work-text {
+    align-self: start;
+    width: 100%;
+  }
+
+  .work-text h4 {
+    font-size: 1rem;
+  }
+
+  .work-img {
+    width: 80%;
+    align-self: center;
+  }
+
+  .work a {
+    font-size: 1.25rem;
+  }
+
+  #about .about-texts {
+    padding: 0;
+  }
+
+  #contact .contact-content {
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  #contact .contact-content .email {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  footer .container.flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-right .nav-links,
+  .footer-right .contacts div:not(:last-child) {
+    display: none;
+  }
+
+  footer .footer-right {
+    width: 100%;
+    align-self: center;
+  }
+
+  footer .contacts {
+    margin: 0 auto;
   }
 }
 
