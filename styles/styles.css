@@ -12,6 +12,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Extra large devices (large desktops, 1200px and up) */
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -85,9 +88,9 @@ header .flex {
 
 .logo {
   font-weight: 700;
-  font-size: 1.5625em;
+  font-size: 1.5625rem;
   line-height: 1.2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
 }
 
 header .nav-links {
@@ -162,7 +165,7 @@ h2::after {
 }
 
 h3 {
-  font-size: 1.5625em;
+  font-size: 1.5625rem;
   line-height: 1.4;
   margin-bottom: 65px;
 }
@@ -181,7 +184,7 @@ h3 {
 }
 
 .work-text h4 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
@@ -195,7 +198,7 @@ h3 {
 }
 
 .work a {
-  font-size: 2em;
+  font-size: 2rem;
   transition: var(--transition);
 }
 
@@ -288,4 +291,81 @@ footer .container {
   flex-direction: row;
   gap: 20px;
   font-size: 20px;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 900px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  header {
+    height: 145px;
+    padding: 36px 0;
+  }
+
+  #main {
+    padding-top: 145px;
+    height: 656px;
+  }
+
+  h1 {
+    padding: 36px 0;
+  }
+
+  .main-img {
+    padding: 36px 0 10px;
+  }
+
+  .work {
+    padding: 50px 0;
+  }
+
+  .work-img {
+    width: 560px;
+  }
+
+  #about,
+  #contact {
+    padding-top: 50px;
+  }
+
+  #about .about-text {
+    padding: 50px 0;
+    width: 100%;
+  }
+
+  #about .about-img {
+    display: none;
+  }
+
+  #contact .contact-content {
+    padding: 50px 0;
+  }
+
+  #contact .contact-content .email {
+    width: 327px;
+  }
+
+  footer .container {
+    padding: 50px 10px;
+  }
+
+  footer .footer-right {
+    width: 50%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 992px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 768px) {
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
 }
