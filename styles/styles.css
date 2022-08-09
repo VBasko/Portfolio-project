@@ -546,4 +546,14 @@ footer .container {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+  h1 {
+    padding: 30px 0;
+  }
+
+  #works {
+    padding-top: 60px;
+  }
 }
