@@ -51,6 +51,7 @@ openMenu.addEventListener("click", () => {
   navMenu.classList.add("active");
 });
 
+// Hide menu
 closeMenu.addEventListener("click", () => {
   navMenu.classList.remove("active");
 });
