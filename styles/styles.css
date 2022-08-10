@@ -73,8 +73,8 @@ header {
   transition: var(--transition);
 }
 
-#close-btn,
-#menu-btn {
+.close-btn,
+.menu-btn {
   display: none;
 }
 
@@ -458,10 +458,6 @@ footer .container {
     font-size: 1rem;
   }
 
-  nav {
-    display: none;
-  }
-
   .main-img {
     display: none;
   }
@@ -542,6 +538,58 @@ footer .container {
   footer .contacts {
     margin: 0 auto;
   }
+
+  header .container {
+    position: relative;
+  }
+
+  nav {
+    display: block;
+    background: var(--color-primary);
+    opacity: 0.98;
+    position: absolute;
+    top: 0;
+    right: -200%;
+    width: 80vw;
+    height: 100vh;
+    z-index: 2;
+    transition: var(--transition);
+  }
+
+  nav ul {
+    flex-direction: column;
+    font-size: 1rem;
+    align-items: center;
+    padding-top: 50%;
+  }
+
+  nav ul li a {
+    color: var(--color-white);
+  }
+
+  nav ul li .nav-link:hover {
+    color: var(--color-acent);
+  }
+
+  nav .close-btn {
+    position: absolute;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  nav .close-btn a {
+    font-size: 1rem;
+    color: var(--color-white);
+  }
+
+  nav .close-btn a:hover {
+    color: var(--color-acent);
+  }
+
+  nav.active {
+    right: calc((-100vw + 570px) / 2);
+  }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -555,5 +603,9 @@ footer .container {
 
   #works {
     padding-top: 60px;
+  }
+
+  nav.active {
+    right: 0;
   }
 }
