@@ -160,6 +160,7 @@
     right: 2rem;
     font-size: 1rem;
     color: var(--color-white);
+    transition: var(--transition);
   }
 
   nav .close-btn:hover {
