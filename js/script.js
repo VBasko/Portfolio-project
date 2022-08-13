@@ -1,57 +1,80 @@
 // Add shadow to header when scrolling
 const header = document.getElementById("header");
-
-window.onscroll = function () {
-  headerActive();
-};
-
-function headerActive() {
-  if (document.documentElement.scrollTop > 0) {
-    header.classList.add("active");
-    activeNavLink();
-  } else {
-    header.classList.remove("active");
-  }
-}
+const SECTION_CHECK_OFFSET = window.innerHeight / 2;
 
 // Change active nav-link when scrolling
-const sections = document.querySelectorAll("section"),
-  homeSection = document.getElementById("home"),
-  navLinks = document.querySelectorAll("header .nav-links .nav-link");
-function activeNavLink() {
-  let current = "";
+const sections = document.querySelectorAll("section");
+const homeSection = document.getElementById("home");
+const navLinks = document.querySelectorAll("header .nav-links .nav-link");
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
+const openMenu = document.getElementById("menu-btn");
+const closeMenu = document.getElementById("close-btn");
+const navMenu = document.getElementById("nav-menu");
 
-    if (document.documentElement.scrollTop < 300) {
-      current = "home";
-    } else if (
-      document.documentElement.scrollTop >=
-      sectionTop - section.offsetHeight / 2 - 30
-    ) {
-      current = section.getAttribute("id");
-    }
-  });
-
+const updateHeaderLinkState = (current) => {
   navLinks.forEach((link) => {
     link.classList.remove("active");
+
     if (link.classList.contains(current)) {
       link.classList.add("active");
     }
   });
-}
+};
 
-// Show menu
-const openMenu = document.getElementById("menu-btn"),
-  closeMenu = document.getElementById("close-btn"),
-  navMenu = document.getElementById("nav-menu");
+const checkHeaderLink = () => {
+  let current = "";
 
-openMenu.addEventListener("click", () => {
+  if (window.scrollY === 0) {
+    current = "home";
+  } else {
+    sections.forEach((section) => {
+      const bbox = section.getBoundingClientRect();
+      const isSectionAboveViewport = bbox.top < SECTION_CHECK_OFFSET;
+
+      if (isSectionAboveViewport) {
+        current = section.id;
+      }
+    });
+  }
+
+  updateHeaderLinkState(current);
+};
+
+const handleScroll = () => {
+  checkHeaderLink();
+
+  // NOTE: Instead of this
+  // if (window.scrollY > 0) {
+  //   header.classList.add("active");
+  // } else {
+  //   header.classList.remove("active");
+  // }
+
+  // NOTE: We can do this
+  const method = window.scrollY > 0 ? "add" : "remove";
+  header.classList[method]("active");
+};
+
+window.addEventListener("scroll", handleScroll);
+
+const openSidebarMenu = () => {
   navMenu.classList.add("active");
-});
+};
 
-// Hide menu
-closeMenu.addEventListener("click", () => {
+const closeSidebarMenu = () => {
   navMenu.classList.remove("active");
-});
+};
+
+openMenu.addEventListener("click", openSidebarMenu);
+closeMenu.addEventListener("click", closeSidebarMenu);
+
+const handleMenuClose = (event) => {
+  const { target } = event;
+
+  if (!target.parentNode) return;
+
+  if (target.parentNode.classList.contains("nav-link")) {
+    closeSidebarMenu();
+  }
+};
+navMenu.addEventListener("click", handleMenuClose);
