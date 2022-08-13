@@ -13,6 +13,16 @@
   box-sizing: border-box;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--color-acent);
+}
+
 /* Extra large devices (large desktops, 1200px and up) */
 
 body {
