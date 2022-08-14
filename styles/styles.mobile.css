@@ -119,6 +119,11 @@
 
   footer .contacts {
     margin: 0 auto;
+    align-items: center;
+  }
+
+  footer .contacts p:last-child {
+    margin-top: 8px;
   }
 
   header .container {
